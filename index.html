@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S-Class</title>
+  <link rel="icon" href="https://www.mercedes-benz.com/content/dam/brandhub/global/logos/MB-star_white.svg/_jcr_content/renditions/original" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<style>
+
+  ul.menu:has(li:hover) li:not(:hover) {
+    color: rgba(219, 211, 211, 0.808);
+    transition: color 0.2s ease-in-out;
+  }
+</style>
+
+<body class="bg-black text-white">
+
+<!-- Header -->
+<header class="fixed top-0 left-0 w-full z-50">
+  <div class="bg-black">
+    <div class="absolute left-0 top-0 px-6 py-1 mt-2 flex items-center space-x-4 z-10">
+      <button href="#" class="text-gray-400 hover:text-white" style="font-size: 13px;">Deutsch</button>
+      <span class="text-gray-600" style="font-size: 13px;">|</span>
+      <button href="#" class="font-bold text-white" style="font-size: 13px;">English</button>
+      <span class="text-gray-600" style="font-size: 13px;">|</span>
+      <a href="#" class="text-gray-400 hover:text-white" style="font-size: 13px;">Provider/Privacy</a>
+    </div>
+    <div class="flex flex-col items-center pt-2">
+      <a href="#">
+        <img src="https://www.mercedes-benz.com/content/dam/brandhub/global/logos/MB-star_white.svg/_jcr_content/renditions/original" alt="Mercedes-Benz Logo" class="h-8 mb-3">
+      </a>
+    </div>
+  </div>
+
+  <nav id="mainnav" class="bg-black backdrop-blur-md border-b border-white/10">
+    <ul class="menu flex justify-center space-x-14 text-sm font-semibold px-6 py-4">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Machine</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Main Content -->
+<main class="relative w-full overflow-hidden" style="height: calc(100vh - 100px); margin-top: 80px;">
+  <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
+    <source src="https://www.mercedes-benz.com/content/dam/brandhub/assets/vehicles/cla/pad/video/01-cla-pad-stage-video-mobile-9-16.cbv20250313093218.mp4/_jcr_content/renditions/original" type="video/mp4" />
+  </video>
+  <div class="absolute inset-0 bg-black/50"></div>
+  <div class="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center items-center">
+    <div class="text-center" style="margin-top: 10%;">
+      <h1 id="main-title" class="text-4xl md:text-6xl font-light tracking-wider uppercase mb-6 opacity-0">Class of its own.</h1>
+      <button id="configure-btn" class="text-lg font-light mb-8 opacity-0 px-6 py-2 border border-white text-white text-sm font-bold uppercase tracking-widest rounded-full hover:bg-white hover:text-black" style="transform: scale(0.8);">Configure now.</button>
+    </div>
+    <a href="#" class="px-6 py-2 border border-white text-white text-sm font-bold uppercase tracking-widest rounded-full hover:bg-white hover:text-black transition-all duration-300">Discover more</a>
+  </div>
+</main>
+
+<!-- Content Section -->
+<<section class="bg-black min-h-[140vh] w-full flex items-start justify-start pt-24">
+  <div class="container mx-auto px-6 mt-10 flex flex-col md:flex-row justify-between items-start">
+    <!-- Left Text Content -->
+    <div class="max-w-2xl text-white space-y-6 text-left md:w-1/2">
+      <p class="fade-left text-xl md:text-5xl font-light leading-relaxed tracking-wide">
+        SPORTS CARS ARE THE ICONS OF OUR BRAND - EMOTIONAL AND TRULY SPECIAL TO CREATE. THE AMG GT XX EMBODIES THE 'HOT' PART OF OUR DESIGN PHILOSOPHY OF SENSUAL PURITY.
+      </p>
+      <p class="fade-right text-sm md:text-base font-light text-gray-400 tracking-wide">
+        GORDEN WAGENER, CHIEF DESIGN OFFICER, MERCEDES-BENZ GROUP AG
+      </p>
+    </div>
+
+    <!-- Right Image Section -->
+    <div class="md:w-1/2 mt-4 md:mt-0 md:ml-8 pr-5">
+      <img src="Modern Wall Art Print by 21MXM.jpeg" alt="AMG GT XX" class="rounded-xl shadow-lg object-cover w-full h-auto max-h-[480px] fade-in-image">
+      <h2 class="grand-opening-text mt-6 text-center text-2xl md:text-4xl font-semibold tracking-widest text-white">
+        GRAND OPENING
+      </h2>
+      
+    </div>
+  </div>
+</section>
+<script>gsap.from(".fade-in-image", {
+  scrollTrigger: {
+    trigger: ".fade-in-image",
+    start: "top -10%",
+    scrub: 2,
+    toggleActions: "play none none none"
+  },
+  opacity: 0,
+  x: 150,
+  duration: 1.5,
+  ease: "power2.out"
+});
+
+gsap.from(".grand-opening-text", {
+  scrollTrigger: {
+    trigger: ".grand-opening-text",
+    start: "top -8%",
+    scrub: 2,
+    toggleActions: "play none none none"
+  },
+  y: 50,
+  opacity: 0,
+  duration: 2,
+  ease: "power3.out"
+});
+</script>
+<script>gsap.from(".fade-left", {
+  scrollTrigger: {
+    trigger: ".fade-left",
+    start: "top -20%",
+    toggleActions: "play none none none",
+    scrub:2
+  },
+  x: -100,
+  opacity: 0,
+  duration: 2,
+  ease: "power2.out"
+});
+
+gsap.from(".fade-right", {
+  scrollTrigger: {
+    trigger: ".fade-right",
+    start: "top -10%",
+    toggleActions: "play none none none",
+    scrub:2
+  },
+  x: 100,
+  opacity: 0,
+  duration: 2,
+  ease: "power2.out"
+});
+</script>
+
+
+
+
+<!-- Footer -->
+<footer class="bg-black text-white  footer-animate">
+  <div class="border-t border-gray-700"></div>
+  <div class="container mx-auto px-6 py-8">
+    <div class="flex flex-wrap justify-center gap-8 text-gray-300" style="font-size: 13px;">
+      <a href="#" class="footer-link hover:text-white transition-colors duration-300">Provider</a>
+      <a href="#" class="footer-link hover:text-white transition-colors duration-300">Legal Notice</a>
+      <a href="#" class="footer-link hover:text-white transition-colors duration-300">Settings</a>
+      <a href="#" class="footer-link hover:text-white transition-colors duration-300">Privacy</a>
+      <a href="#" class="footer-link hover:text-white transition-colors duration-300">Contact</a>
+      <a href="#" class="footer-link hover:text-white transition-colors duration-300">Third Party License Notices</a>
+      <a href="#" class="footer-link hover:text-white transition-colors duration-300">Don't Sell My Personal Information (CCPA)</a>
+      <a href="#" class="footer-link hover:text-white transition-colors duration-300">Accessibility</a>
+    </div>
+  </div>
+  <div class="flex justify-center items-center py-8">
+    <div class="flex items-center space-x-4" style="font-size: 13px;">
+      <button href="#" class="footer-link2 hover:text-white">Deutsch</button>
+      <span class="text-gray-600">|</span>
+      <button class="footer-link2 font-bold text-white">English</button>
+    </div>
+  </div>
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col items-center py-10 footer-link2">
+      <img src="https://www.mercedes-benz.com/content/dam/brandhub/global/logos/MB-star_white.svg/_jcr_content/renditions/original" alt="Mercedes-Benz Logo" class="h-8 mb-3" />
+    </div>
+  </div>
+  <div class="flex justify-center pb-8">
+    <button class="flex flex-col items-center text-white hover:text-gray-300 transition-colors duration-300" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+      </svg>
+      <span style="font-size: 13px;">Top</span>
+    </button>
+  </div>
+  
+</footer>
+<script>gsap.from(".footer-link", {
+  scrollTrigger: {
+    trigger: ".footer-animate",
+    start: "top -15%",
+    toggleActions: "play none none none",
+    scrub: 1
+  },
+  y: 40,
+  opacity: 0,
+  stagger: 0.1,
+  ease: "power2.out"
+});
+
+gsap.from(".footer-link2", {
+  scrollTrigger: {
+    trigger: ".footer-animate",
+    start: "top -20%",
+    toggleActions: "play none none none",
+    scrub: 2
+  },
+  y: 50,
+  opacity: 0,
+  stagger: 0.15,
+  ease: "power3.out"
+});
+
+</script>
+<!-- Loader -->
+<div id="loader" class="fixed inset-0 bg-black flex flex-col justify-center items-center z-[9999] opacity-100 transition-opacity duration-700 ease-in-out">
+  <img src="https://www.mercedes-benz.com/content/dam/brandhub/global/logos/MB-star_white.svg/_jcr_content/renditions/original" alt="Mercedes Loader" class="w-20 h-15">
+  <div id="loader-count" class="absolute bottom-6 right-8 text-white text-4xl font-bold"></div>
+</div>
+
+<!-- JS for Loader and Navbar Animation -->
+<script>
+  let count = 0;
+  const loader = document.getElementById('loader');
+  const counter = document.getElementById('loader-count');
+
+  const interval = setInterval(() => {
+    if (count <= 100) {
+      counter.textContent = `${count}%`;
+      count++;
+    } else {
+      clearInterval(interval);
+
+      loader.classList.add("opacity-0");
+      loader.classList.remove("opacity-100");
+
+                           setTimeout(() => {
+          loader.style.display = "none";
+          document.body.classList.add("opacity-100");
+
+          const nav = document.getElementById("mainnav");
+          gsap.set(nav, { height: "100vh", overflow: "hidden" });
+
+          setTimeout(() => {
+            gsap.to(nav, {
+              height: "auto",
+              duration: 1,
+              ease: "power2.inOut",
+              onComplete: () => {
+                nav.style.overflow = "";
+                document.body.style.overflow = "";
+              }
+            });
+          }, 200);
+
+                                                   gsap.from(".text-gray-400, .text-gray-600, a[href='#']", {
+              y: -20,
+              opacity: 0,
+              duration: 0.8,
+              stagger: 0.1,
+              ease: "power2.out"
+            });
+
+            gsap.from(".menu li", {
+              y: -30,
+              opacity: 0,
+              duration: 0.8,
+              stagger: 0.15,
+              ease: "power2.out"
+            });
+
+             gsap.from(".font-bold.text-white", {
+               y: -20,
+               opacity: 0,
+               duration: 0.8,
+               ease: "power2.out"
+             });
+
+              setTimeout(() => {
+                gsap.to("#main-title", {
+                  opacity: 1,
+                  scale: 1,
+                  duration: 1.5,
+                  ease: "power2.out"
+                });
+
+                gsap.to("#configure-btn", {
+                  opacity: 1,
+                  scale: 1,
+                  duration: 1.2,
+                  delay: 0.3,
+                  ease: "power2.out"
+                });
+
+                                               gsap.registerPlugin(ScrollTrigger);
+                
+                                 const mainTitleTimeline = gsap.timeline({
+                   scrollTrigger: {
+                     trigger: "main",
+                     start: "top80%",
+                     end: "bottom top",
+                     scrub: 0.8,
+                     pin: true,
+                     pinSpacing: true,
+                     onUpdate: (self) => {
+                       const progress = self.progress;
+                       
+                                               gsap.set("#main-title", {
+                          scale: 1 + (progress * .6),
+                          opacity: progress > 0.05 ? 1 - ((progress - 0.05) / 0.95) : 1
+                        });
+                        
+                        gsap.set("#configure-btn", {
+                          scale: 1 - (progress * .3),
+                          opacity: progress > 0.05 ? 1 - ((progress - 0.05) / 0.95) : 1
+                        });
+                        
+                        document.body.style.overflow = "";
+                     },
+                     onLeave: () => {
+                       document.body.style.overflow = "";
+                     }
+                   }
+                 });
+                
+                mainTitleTimeline.to("#main-title", {
+                  scale: 1.8,
+                  ease: "power2.out"
+                });
+             }, 1000);
+       }, 20);
+    }
+  }, 30);
+</script>
+
+<script src="script.js"></script>
+<script src="gsap.js"></script>
+
+</body>
+</html>
